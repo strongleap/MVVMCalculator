@@ -1,0 +1,71 @@
+﻿<Window x:Class="MVVMCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:MVVMCalculator.ViewModels"
+        xmlns:local="clr-namespace:MVVMCalculator"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="80"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="3" Grid.Row="1" Command="{Binding SetOperatorCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <local:Addition/>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="2" Command="{Binding SetOperatorCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <local:Substract/>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="3" Command="{Binding SetOperatorCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <local:Multiply/>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="4" Command="{Binding SetOperatorCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <local:Divide/>
+        </Button>
+        <Button Grid.Row="3" Grid.Column="0" Command="{Binding AppendDigitCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <sys:Int32>1</sys:Int32>
+        </Button>
+        <Button Grid.Row="3" Grid.Column="1" Command="{Binding AppendDigitCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <sys:Int32>2</sys:Int32>
+        </Button>
+        <Button Grid.Row="3" Grid.Column="2" Command="{Binding AppendDigitCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <sys:Int32>3</sys:Int32>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="0" Command="{Binding AppendDigitCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <sys:Int32>4</sys:Int32>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="1" Command="{Binding AppendDigitCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <sys:Int32>5</sys:Int32>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="2" Command="{Binding AppendDigitCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <sys:Int32>6</sys:Int32>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="0" Command="{Binding AppendDigitCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <sys:Int32>7</sys:Int32>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="1" Command="{Binding AppendDigitCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <sys:Int32>8</sys:Int32>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="2" Command="{Binding AppendDigitCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <sys:Int32>9</sys:Int32>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="4" Command="{Binding AppendDigitCommand}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}">
+            <sys:Int32>0</sys:Int32>
+        </Button>
+        <Button Grid.Column="0" Grid.Row="4" Command="{Binding ClearCommand}">
+            Clear
+        </Button>
+        <Button Grid.Column="2" Grid.Row="4" Command="{Binding EvaluateCommand}">=</Button>
+
+        <TextBlock Grid.ColumnSpan="3" FontSize="25" HorizontalAlignment="Right" Text="{Binding CalculationText}"></TextBlock>
+    </Grid>
+</Window>
