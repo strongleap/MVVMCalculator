@@ -67,6 +67,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Addition.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Divide.cs" />
     <Compile Include="IOperator.cs" />
     <Compile Include="Multiply.cs" />
